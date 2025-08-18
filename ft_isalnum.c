@@ -6,7 +6,8 @@ int ft_isalnum (char c)
      (c >= 97 && c <= 122))
     {
         return 3072;
-    } else {
-        return 0;
-    }
+    } 
+    
+    return 0;
+    
 }

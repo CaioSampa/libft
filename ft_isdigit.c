@@ -1,4 +1,7 @@
 int ft_isdigit (char c) 
 {
-    return (c >= 48 && c <= 57) ? 2048 : 0;
-}
+    if(c >= 48 && c <= 57) return  2048;
+    
+    return 0;
+}                     
+

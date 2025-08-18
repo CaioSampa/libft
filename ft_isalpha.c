@@ -1,3 +1,8 @@
 int ft_isalpha (char c){
-    return (c >= 65 && c <= 90) || (c >= 97 && c <= 122) ? 1024 : 0;
+    
+    if((c >= 65 && c <= 90) || (c >= 97 && c <= 122)){
+        return 1024;
+    } 
+
+    return 0;
 }
