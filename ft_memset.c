@@ -1,15 +1,11 @@
-#include <stdio.h>
-#include <string.h>
 
-
-int main (void) 
+void * ft_memset (void *ptr, int c, int n) 
 {
-    char n1 = 'A';
-    char *ptr = &n1;
+    char *ptr2 = ptr;
 
-    memset(ptr, 'B', 1* sizeof(char));
+    while (n--) {
+        *ptr2++ = c;
+    }
 
-    printf("%c\n" , n1);
-
-    return 0;
+    return ptr;
 }
