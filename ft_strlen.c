@@ -1,8 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 13:32:43 by casampai          #+#    #+#             */
+/*   Updated: 2026/05/29 13:34:29 by casampai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-size_t ft_strlen (char *str) {
-    size_t len = 0;
-    while (*(str + len) != '\0') len++;
-    return len;
-}
+size_t	ft_strlen(char *str)
+{
+	size_t	len;
 
+	len = 0;
+	while (*(str + len) != '\0')
+		len++;
+	return (len);
+}

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 13:32:40 by casampai          #+#    #+#             */
+/*   Updated: 2026/05/29 14:53:24 by casampai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void * ft_memset (void *ptr, int c, int n) 
+#include <string.h>
+
+void	*ft_memset(void *ptr, int c, size_t n)
 {
-    char *ptr2 = ptr;
+	char	*ptr2;
 
-    while (n--) {
-        *ptr2++ = c;
-    }
-
-    return ptr;
+	*ptr2 = ptr;
+	while (n--)
+		*ptr2++ = c;
+	return (ptr);
 }

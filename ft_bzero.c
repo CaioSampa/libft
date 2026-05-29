@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 13:32:11 by casampai          #+#    #+#             */
+/*   Updated: 2026/05/29 13:52:13 by casampai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_bzero (void *s, size_t n) {
-    unsigned char *toZero = s;
-    while(n--){
-        *toZero++ = '\0';
-    }
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*to_zero;
+
+	to_zero = s;
+	while (n--)
+		*to_zero++ = '\0';
 }
