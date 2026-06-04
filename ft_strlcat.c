@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/29 13:32:37 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/04 13:01:05 by casampai         ###   ########.fr       */
+/*   Created: 2026/06/04 15:22:05 by casampai          #+#    #+#             */
+/*   Updated: 2026/06/04 15:47:52 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memmove(void *dest, void *src, size_t n)
+size_t  strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*ptr_dest;
-	char	*ptr_src;
+    size_t  len_count;
 
-	ptr_dest = (char *) dest;
-	ptr_src = (char *) src;
+    len_count = 0;
 
-	if (dest == src || n == 0)
-		return (dest);
-
-	if (dest > src)
-	{
-		ptr_dest += (n - 1);
-		ptr_src += (n - 1);
-		while (n--)
-			*ptr_dest-- = *ptr_src--;
-	}
-	else
-	{
-		while (n--)
-			*ptr_dest++ = *ptr_src++;
-	}
-	return (dest);
+    while(dstsize)
+    {
+        dst[dstsize - 1] = src[len_count];
+        dstsize--;
+        len_count++;
+    }
 }
