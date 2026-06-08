@@ -6,36 +6,35 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 13:43:54 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/04 15:20:44 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/06 15:31:12 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <bsd/string.h>
-#include <stdio.h>
+#include "libft.h"
 
-size_t	ft_strlcpy(char *d, const char *s, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
-	size_t	s_len; // para retornar o len de s
+    int i;
+    int len_src;
+    
+    i = 0;
+    len_src = 0;
 
-	s_len = 0;
-	i = 0;
+    while (src[len_src])
+        len_src++;
+    
+    if (size == 0)
+        return (len_src);
+    
+	while (src[i] && size - 1)
+    {
+        dst[i] = src[i];
+        i++;
+        size--;
+    }
 
-	while (s[s_len])
-		s_len++;
+    if (size > 0)
+        dst[i] = '\0';
 
-	if (n == 0) // verificar se n vazio
-		return (s_len);
-
-	while ((s[i]) && n - 1) // se s existe na posicao do contador e n existe - 1 para sobrar 1 no final para o null terminator
-	{
-		d[i] = s[i];
-		i++;
-		n--;
-	}
-	if (n >= 0) // colocar o null terminator no fim da str
-		d[i] = '\0';
-
-	return (s_len); // retorno 
+    return (len_src);
 }

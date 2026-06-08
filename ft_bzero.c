@@ -6,11 +6,11 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:11 by casampai          #+#    #+#             */
-/*   Updated: 2026/05/29 13:52:13 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/06 15:31:35 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
