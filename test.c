@@ -1,67 +1,85 @@
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 // Função auxiliar para rodar e comparar os testes
-void test_memcmp(const void *s1, const void *s2, size_t n, int test_num)
+void test_atoi(const char *str, int test_num)
 {
-    int og = memcmp(s1, s2, n);
-    int ft = ft_memcmp(s1, s2, n);
-    
-    // Normaliza os resultados para 1, -1 ou 0
-    int og_norm = (og > 0) - (og < 0);
-    int ft_norm = (ft > 0) - (ft < 0);
+    int og = atoi(str);
+    int ft = ft_atoi(str);
 
-    if (og_norm == ft_norm)
+    if (og == ft)
     {
-        printf("\033[0;32m[OK] Teste %d\033[0m -> n: %zu (OG: %d | FT: %d)\n", test_num, n, og, ft);
+        // Troque os caracteres invisíveis por algo legível no print
+        printf("\033[0;32m[OK] Teste %2d\033[0m -> Input: ", test_num);
+        if (str[0] == '\t' || str[0] == ' ')
+            printf("\"[whitespaces]...\"");
+        else
+            printf("\"%s\"", str);
+        printf(" | (OG: %d | FT: %d)\n", og, ft);
     }
     else
     {
-        printf("\033[0;31m[KO] Teste %d\033[0m -> n: %zu (OG: %d | FT: %d)\n", test_num, n, og, ft);
+        printf("\033[0;31m[KO] Teste %2d\033[0m -> Input: \"%s\"\n", test_num, str);
+        printf("    -> OG retornou: %d\n", og);
+        printf("    -> FT retornou: %d\n", ft);
     }
 }
 
 int main(void)
 {
-    printf("=== INICIANDO TESTES MEMCMP ===\n\n");
+    printf("=== INICIANDO TESTES ATOI ===\n\n");
 
-    // Teste 1: Memórias idênticas
-    test_memcmp("abcdef", "abcdef", 6, 1);
+    // Teste 1: Número simples positivo
+    test_atoi("42", 1);
 
-    // Teste 2: Idênticas, mas n é menor que o tamanho total
-    test_memcmp("abcdef", "abcdef", 3, 2);
+    // Teste 2: Número simples negativo
+    test_atoi("-42", 2);
 
-    // Teste 3: Diferença na primeira posição
-    test_memcmp("abcdef", "zbcdef", 6, 3);
+    // Teste 3: Número com sinal de mais explicito
+    test_atoi("+42", 3);
 
-    // Teste 4: Diferença no meio, mas n para antes da diferença
-    test_memcmp("abcXdef", "abcYdef", 3, 4);
+    // Teste 4: Espaços em branco permitidos (isspace) no começo
+    // \t (tab), \n (newline), \v (vtab), \f (form feed), \r (carriage return) e espaço
+    test_atoi(" \t\n\v\f\r  54321", 4);
 
-    // Teste 5: Diferença no meio, n engloba a diferença
-    test_memcmp("abcXdef", "abcYdef", 4, 5);
+    // Teste 5: Caracteres não numéricos DEPOIS do número (deve parar e retornar o número)
+    test_atoi("42_is_the_answer", 5);
 
-    // Teste 6: Tamanho n é ZERO (deve retornar 0 imediatamente)
-    test_memcmp("abcdef", "xyz", 0, 6);
+    // Teste 6: Caracteres não numéricos ANTES do número (deve retornar 0)
+    test_atoi("the_answer_is_42", 6);
 
-    // Teste 7: Strings idênticas ATÉ o \0, mas com diferença DEPOIS do \0
-    // memcmp DEVE continuar comparando e encontrar a diferença!
-    test_memcmp("abc\0def", "abc\0xyz", 7, 7);
+    // Teste 7: Múltiplos sinais seguidos (Edge case clássico da 42)
+    // A atoi original NÃO aceita múltiplos sinais. Ela vê "+-" e para ali mesmo, retornando 0.
+    test_atoi("+-42", 7);
+    test_atoi("--42", 8);
+    test_atoi("++42", 9);
 
-    // Teste 8: Mesmo caso anterior, mas n para exatamente no \0
-    test_memcmp("abc\0def", "abc\0xyz", 4, 8);
+    // Teste 10: String vazia
+    test_atoi("", 10);
 
-    // Teste 9: Edge case com ASCII estendido (valores "negativos")
-    // Se não usar (unsigned char *), o caractere \xff (-1 em signed) 
-    // vai parecer menor que \x01, o que é incorreto.
-    char src1[] = "\xff\xaa\x00";
-    char src2[] = "\x01\xaa\x00";
-    test_memcmp(src1, src2, 3, 9);
+    // Teste 11: Apenas espaços em branco
+    test_atoi("    ", 11);
 
-    // Teste 10: Comparando arrays de inteiros (afinal, é memória genérica)
-    int arr1[] = {1, 2, 3, 4};
-    int arr2[] = {1, 2, 5, 4};
-    test_memcmp(arr1, arr2, sizeof(int) * 4, 10);
+    // Teste 12: Apenas um sinal
+    test_atoi("-", 12);
+
+    // Teste 13: Número zero
+    test_atoi("0", 13);
+    test_atoi("-0", 14);
+
+    // Teste 15: Limite máximo de um int de 32 bits (INT_MAX: 2147483647)
+    test_atoi("2147483647", 15);
+
+    // Teste 16: Limite mínimo de um int de 32 bits (INT_MIN: -2147483648)
+    test_atoi("-2147483648", 16);
+
+    // Teste 17: Overflow e Underflow (Comportamento indefinido na libc original)
+    // Nota: A atoi original da glibc lida com overflows de formas que podem variar por sistema, 
+    // mas a maioria dos testers da 42 aceita o comportamento que o seu algoritmo padrão cuspir 
+    // ou o comportamento da função strtol.
+    test_atoi("2147483648", 17);  // INT_MAX + 1
+    test_atoi("-2147483649", 18); // INT_MIN - 1
 
     printf("\n=== FIM DOS TESTES ===\n");
     return (0);

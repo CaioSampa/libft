@@ -6,35 +6,25 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 15:34:52 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/09 16:35:16 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/12 18:37:31 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    unsigned char    *ptr_p1;
-    unsigned char    *ptr_p2;
-    int               type_return;
-
-    ptr_p1 =  ptr1;
-    ptr_p2 =  ptr2;
-    type_return = 0;
+    char    *ptr_s1;
+    char    *ptr_s2;
     
-    if(num == 0)
-        return (type_return);
-    while(--num)
+    ptr_s1 = (char *) s1;
+    ptr_s2 = (char *) s2;
+    if (n == 0)
+        return (0);
+    while ((*ptr_s1 == *ptr_s2) && --n)
     {
-        if (*ptr_p1 < *ptr_p2)
-            type_return = -1;
-        if(*ptr_p1 > *ptr_p2)
-            type_return = 1;
-        if(*ptr_p1 == *ptr_p2)
-            type_return = 0;
-        ptr_p1++;
-        ptr_p2++;
-    }
-
-    return (type_return);
+       ptr_s1++;
+       ptr_s2++;
+    }   
+    return ((unsigned char)*ptr_s1 - (unsigned char)*ptr_s2);
 }

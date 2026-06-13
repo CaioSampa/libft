@@ -1,17 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/08 17:13:05 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/12 15:19:38 by casampai         ###   ########.fr       */
+/*   Created: 2026/06/12 18:25:24 by casampai          #+#    #+#             */
+/*   Updated: 2026/06/13 14:44:15 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int ft_atoi(const char *nptr)
 {
-    if ((c >= 65 && c <= 90))
-        return (c + 32);
+	int	sign;
+	long long	result;
+
+	sign = 1;
+	result = 0;
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+    {
+        if (*nptr == '-')
+            sign = -1; 
+        nptr++;
+    }
+	while (*nptr >= 48 && *nptr <= 57)
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (result * sign);
 }
