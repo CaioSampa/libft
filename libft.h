@@ -3,6 +3,7 @@
 #define LIBFT_H
 
 #include <stddef.h>
+#include <stdlib.h>
 
 int ft_isalpha(char c);
 int t_isdigit(char c);
@@ -29,4 +30,12 @@ void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 char *ft_strnstr(const char *big, const char *little, size_t len);
 int ft_atoi(const char *nptr);
+void *ft_calloc(size_t nmemb, size_t size);
+char *ft_strdup(const char *s);
+
+char *ft_substr(char const *s, unsigned int start,
+size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+
 #endif
