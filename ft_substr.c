@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:32:57 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/15 16:48:41 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/17 00:09:09 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     if (!s)
         return (NULL);
 
-    s_len = ft_strlen(s);
+    s_len = ft_strlen((char *) s);
     i = 0;
     if (start > s_len)
     {
