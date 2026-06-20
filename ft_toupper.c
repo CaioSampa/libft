@@ -6,12 +6,14 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 17:09:37 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/12 15:20:00 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:22:21 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-    if ((c >= 97 && c <= 122))
-        return (c - 32);
+	if ((c >= 97 && c <= 122))
+		return (c - 32);
 }

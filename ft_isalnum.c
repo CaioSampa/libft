@@ -6,18 +6,16 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:20 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/13 18:10:29 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:47:00 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum (char c) 
+#include "libft.h"
+
+int	ft_isalnum(char c)
 {
-    if(
-     (c >= 48 && c <= 57) ||
-     (c >= 65 && c <= 90) || 
-     (c >= 97 && c <= 122))
-    {
-        return (1);
-    } 
-    return (0);
+	if (ft_isdigit(c) || ft_isalpha(c))
+		return (1);
+
+	return (0);
 }

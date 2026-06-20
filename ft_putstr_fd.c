@@ -6,20 +6,17 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 19:46:32 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/19 19:58:22 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:31:26 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-    {
-        write(fd, s[i], 1);
-        i++;
-    }
+	i = -1;
+	while (s[i])
+		write(fd, s[i++], 1);
 }

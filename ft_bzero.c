@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:11 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/06 15:31:35 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:32:07 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*to_zero;
-
-	to_zero = s;
-	while (n--)
-		*to_zero++ = '\0';
+	ft_memset(s, '\0', n);
 }

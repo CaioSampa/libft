@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 13:44:33 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 17:03:11 by casampai         ###   ########.fr       */
+/*   Created: 2026/06/20 18:13:00 by casampai          #+#    #+#             */
+/*   Updated: 2026/06/20 18:31:14 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*ptr;
+	t_list	*new_list;
 
-	if (!nmemb || !size)
-	{
-		ptr = malloc(sizeof(char));
-		if (!ptr)
-			return (NULL);
-		return (ptr);
-	}
-
-	ptr = malloc(nmemb * size);
-	if (!ptr)
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
-	return (ptr);
+		new_list = lst;
+	while (new_list->next)
+	{
+		new_list->content = f(lst->content);
+		new_list = new_list->next;
+	}
+	return (new_list);
 }

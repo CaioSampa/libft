@@ -6,19 +6,24 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:03:29 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/15 15:20:11 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:07:18 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    size_t s_len = ft_strlen(s) + 1;
-    char    *ptr_str = malloc(s_len * sizeof(char));
-    
-    if(!ptr_str)
-        return (NULL);
-    ft_strlcpy(ptr_str, s, s_len);
-    return (ptr_str);
+	size_t	s_len;
+	char	*ptr_str;
+
+	s_len = ft_strlen(s);
+	ptr_str = malloc(sizeof(char) * (s_len + 1));
+
+	if (!ptr_str)
+		return (NULL);
+
+	ft_strlcpy(ptr_str, s, s_len);
+
+	return (ptr_str);
 }

@@ -6,22 +6,22 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 20:25:13 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/19 20:48:06 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:22:54 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *node;
+	t_list	*node;
 
-    node = malloc(sizeof(t_list));
-    if(!node)
-        return(NULL);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
 
-    node->content = content;
-    node->next = NULL;
+	node->content = content;
+	node->next = NULL;
 
-    return (node);
+	return (node);
 }

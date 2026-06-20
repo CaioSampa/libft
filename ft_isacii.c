@@ -6,9 +6,11 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:17 by casampai          #+#    #+#             */
-/*   Updated: 2026/05/29 13:55:59 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:44:01 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isacii(int c )
 {

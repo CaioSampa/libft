@@ -6,13 +6,13 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 18:41:49 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/19 19:45:57 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 16:59:49 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, c, 1);
+	write(fd, c, 1);
 }

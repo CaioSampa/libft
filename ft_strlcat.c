@@ -6,29 +6,29 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:22:05 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/08 17:08:00 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 16:15:10 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
-	size_t dst_initial_len;
+	int		i;
+	int		j;
+	size_t	dst_initial_len;
 
 	i = 0;
 	j = 0;
 	dst_initial_len = ft_strlen(dst);
 
-	if(size == 0 || size <= dst_initial_len)
-		return (size + ft_strlen((char *) src));
-	
+	if (size == 0 || size <= dst_initial_len)
+		return (size + ft_strlen((char *)src));
+
 	while (dst[i])
 		i++;
 
-	while (src[j] && i < (int) size - 1)
+	while (src[j] && i < (int)size - 1)
 	{
 		dst[i] = src[j];
 		i++;
@@ -36,6 +36,6 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
 	}
 
 	dst[i] = '\0';
-	
-	return (dst_initial_len + ft_strlen((char *) src));
+
+	return (dst_initial_len + ft_strlen((char *)src));
 }

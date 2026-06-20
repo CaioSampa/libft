@@ -6,9 +6,11 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:26 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/16 16:24:01 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:45:38 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(char c)
 {

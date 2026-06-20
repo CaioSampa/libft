@@ -6,16 +6,16 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:37:23 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/18 18:23:52 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:19:59 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t count_words(char *str, char c)
+size_t	count_words(char *str, char c)
 {
-	size_t words;
-	int i;
+	size_t	words;
+	int 	i;
 
 	words = 0;
 	i = 0;
@@ -28,9 +28,9 @@ size_t count_words(char *str, char c)
 	return (words);
 }
 
-static char **ft_free_all(char **arr, size_t words_created)
+static	char	**ft_free_all(char **arr, size_t words_created)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	// Da free em cada palavra alocada até o momento da falha
@@ -46,10 +46,10 @@ static char **ft_free_all(char **arr, size_t words_created)
 
 static char **write_words(char **arr, char const *s, char c)
 {
-	size_t i;
-	size_t j;
-	size_t current_word;
-	size_t index_word;
+	size_t	i;
+	size_t	j;
+	size_t	current_word;
+	size_t	index_word;
 
 	i = 0;
 	current_word = 0;
@@ -79,29 +79,29 @@ static char **write_words(char **arr, char const *s, char c)
 
 char **ft_split(char const *s, char c)
 {
-    size_t words;
-    char **arr_str;
+	size_t words;
+	char **arr_str;
 
-    // 1. PROTEÇÃO CONTRA NULL: Se a string não existir, para tudo.
-    if (!s)
-        return (NULL);
+	// 1. PROTEÇÃO CONTRA NULL: Se a string não existir, para tudo.
+	if (!s)
+		return (NULL);
 
-    // 2. CONTAGEM SEGURA: Se a string for "", count_words deve retornar 0.
-    words = count_words((char *)s, c);
-    
-    // Aloca o array principal
-    arr_str = malloc(sizeof(char *) * (words + 1));
-    if (!arr_str)
-        return (NULL);
+	// 2. CONTAGEM SEGURA: Se a string for "", count_words deve retornar 0.
+	words = count_words((char *)s, c);
 
-    // 3. SEGURANÇA DE ESCRITA: Se write_words falhar internamente (falta de memória),
-    // ela mesma limpa tudo usando a static ft_free_all e nos retorna NULL.
-    if (!write_words(arr_str, s, c))
-    {
-        // Se sua write_words já der o free_all lá dentro, 
-        // aqui basta retornar NULL para indicar a falha geral.
-        return (NULL); 
-    }
+	// Aloca o array principal
+	arr_str = malloc(sizeof(char *) * (words + 1));
+	if (!arr_str)
+		return (NULL);
 
-    return (arr_str);
+	// 3. SEGURANÇA DE ESCRITA: Se write_words falhar internamente (falta de memória),
+	// ela mesma limpa tudo usando a static ft_free_all e nos retorna NULL.
+	if (!write_words(arr_str, s, c))
+	{
+		// Se sua write_words já der o free_all lá dentro,
+		// aqui basta retornar NULL para indicar a falha geral.
+		return (NULL);
+	}
+
+	return (arr_str);
 }
