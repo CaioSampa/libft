@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 18:12:09 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 16:42:29 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:38:48 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	if (n == 0)
-		return (NULL);
+		return (0);
 	while (s1[i] && (s1[i] == s2[i]) && --n)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);

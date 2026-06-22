@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 21:55:10 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 14:48:31 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 06:53:56 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_lstsize(t_list *lst)
 
 	size = 0;
 	current_node = lst;
-	while (current_node->next)
+	while (current_node != NULL)
 	{
 		size++;
 		current_node = current_node->next;

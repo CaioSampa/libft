@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 19:46:32 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 17:31:26 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:34:55 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	ft_putstr_fd(char *s, int fd)
 
 	i = -1;
 	while (s[i])
-		write(fd, s[i++], 1);
+		write(fd, &s[i++], 1);
 }

@@ -6,18 +6,20 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:33 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 15:46:08 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:50:43 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, int count)
+#include "libft.h"
+
+void *ft_memcpy(void *dest, const void *src, size_t n)  
 {
 	char	*d;
 	char	*s;
 
 	d = dest;
-	s = src;
-	while (count--)
+	s = (char *)src;
+	while (n--)
 		*d++ = *s++;
 	return (dest);
 }

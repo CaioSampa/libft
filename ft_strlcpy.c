@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 13:43:54 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 16:04:55 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:37:49 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	while (src[i] && size - 1)
 	{
-		dst[i++] = src[i++];
+		dst[i] = src[i];
+		i++;
 		size--;
 	}
 

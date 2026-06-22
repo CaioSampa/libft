@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:03:29 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 17:07:18 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:35:33 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	size_t	s_len;
 	char	*ptr_str;
 
-	s_len = ft_strlen(s);
+	s_len = ft_strlen((char *)s);
 	ptr_str = malloc(sizeof(char) * (s_len + 1));
 
 	if (!ptr_str)

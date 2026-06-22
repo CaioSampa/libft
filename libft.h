@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 17:42:55 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 18:14:20 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:48:59 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ typedef struct s_list
 int		ft_isalpha(char c);
 int		ft_isdigit(char c);
 int		ft_isprint(int c);
-int		ft_isacii(int c);
+int		ft_isascii(int c);
 int		ft_isalnum(char c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memmove(void *dest, void *src, size_t n);
-void	*ft_memcpy(void *dest, void *src, int count);
+void	*ft_memcpy(void *dest, const void *src, size_t n);   
 void	*ft_memset(void *ptr, int c, size_t n);
 
 size_t	ft_strlcpy(char *d, const char *s, size_t buffer);
