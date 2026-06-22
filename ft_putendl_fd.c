@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 20:00:34 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 17:57:24 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:13:56 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 		ft_putchar_fd(s[i++], fd);
-
 	ft_putchar_fd('\0', fd);
 }

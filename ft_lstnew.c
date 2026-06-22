@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 20:25:13 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/20 18:22:54 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:13:22 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ t_list	*ft_lstnew(void *content)
 	node = malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
-
 	node->content = content;
 	node->next = NULL;
-
 	return (node);
 }

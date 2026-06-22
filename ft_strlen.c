@@ -6,13 +6,13 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:43 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/06 15:31:08 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:18:43 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 

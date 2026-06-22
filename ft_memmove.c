@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:32:37 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/06 15:31:26 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:08:18 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 
 	ptr_dest = (char *) dest;
 	ptr_src = (char *) src;
-
 	if (dest == src || n == 0)
 		return (dest);
-
 	if (dest > src)
 	{
 		ptr_dest += (n - 1);

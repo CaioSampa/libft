@@ -6,13 +6,13 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 17:13:05 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/21 07:40:03 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:42:56 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if ((c >= 65 && c <= 90))
-        return (c + 32);
-    return (c);
+	if ((c >= 65 && c <= 90))
+		return (c + 32);
+	return (c);
 }
