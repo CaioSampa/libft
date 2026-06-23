@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 17:42:55 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/22 17:48:01 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/23 14:26:22 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int		ft_isalpha(char c);
-int		ft_isdigit(char c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isascii(int c);
-int		ft_isalnum(char c);
+int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 

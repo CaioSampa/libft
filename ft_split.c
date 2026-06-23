@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:37:23 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/22 18:21:12 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/23 19:56:34 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	count_words(char *str, char c)
 {
 	size_t	words;
-	int 	i;
+	int		i;
 
 	words = 0;
 	i = 0;
@@ -33,18 +33,16 @@ static	char	**ft_free_all(char **arr, size_t words_created)
 	size_t	i;
 
 	i = 0;
-	// Da free em cada palavra alocada até o momento da falha
 	while (i < words_created)
 	{
 		free(arr[i]);
 		i++;
 	}
-	// Dá free no array principal
 	free(arr);
 	return (NULL);
 }
 
-static char **write_words(char **arr, char const *s, char c)
+static char	**write_words(char **arr, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;

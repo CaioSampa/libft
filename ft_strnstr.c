@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/12 17:04:28 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/22 18:19:08 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/23 18:17:30 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,18 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*ptr_big;
-	char	*ptr_little;
-	size_t	matched_len;
+	size_t	i;
+	size_t	little_len;
 
-	ptr_big = (char *)big;
-	ptr_little = (char *)little;
-	matched_len = len;
-	// if (*little == '\0')
-	// 	return (ptr_big);
-	// while (*ptr_big && len)
-	// {
-	// 	if ((*ptr_big == *ptr_little))
-	// 	{
-	// 		matched_len++;
-	// 		ptr_little++;
-	// 		if (*ptr_little == '\0')
-	// 			return (ptr_big - (matched_len - 1));
-	// 	}
-	// 	else
-	// 	{
-	// 		if (matched_len > 0)
-	// 		{
-	// 			ptr_big = ptr_big - matched_len;
-	// 			len = len + matched_len;
-	// 			ptr_little = (char *)little;
-	// 			matched_len = 0;
-	// 		}
-	// 	}
-	// 	ptr_big++;
-	// 	len--;
-	// }
+	i = 0;
+	little_len = ft_strlen(little);
+	if (*little == '\0')
+		return ((char *)&big[0]);
+	while (big[i] && i + little_len <= len)
+	{
+		if (ft_memcmp(&big[i], little, little_len) == 0)
+			return ((char *)&big[i]);
+		i++;
+	}
 	return (NULL);
 }
