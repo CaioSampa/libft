@@ -6,7 +6,7 @@
 /*   By: casampai <casampai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 17:52:18 by casampai          #+#    #+#             */
-/*   Updated: 2026/06/21 07:34:23 by casampai         ###   ########.fr       */
+/*   Updated: 2026/06/25 01:44:39 by casampai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str_nbr;
-	int		i;
+	long	nbr;
 
-	i = 0;
-	str_nbr = ft_itoa(n);
-	while (str_nbr[i])
-		ft_putchar_fd(str_nbr[i++], fd);
+	nbr = n;
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
+	}
+	if (nbr >= 10)
+		ft_putnbr_fd((nbr / 10), fd);
+	ft_putchar_fd((nbr % 10) + '0', fd);
 }
